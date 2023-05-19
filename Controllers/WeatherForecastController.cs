@@ -1,3 +1,4 @@
+using ErrorHandling.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ErrorHandling.Controllers;
@@ -28,5 +29,11 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+
+    [HttpPost]
+    public IActionResult  Post ()
+    {
+        throw new CustomException("Not Implemented");
     }
 }
