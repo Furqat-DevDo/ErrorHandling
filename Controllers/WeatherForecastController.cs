@@ -29,4 +29,10 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+    [HttpPost]
+    public IActionResult Post()
+    {
+        throw new Exception("Custom Exception");
+    }
 }
